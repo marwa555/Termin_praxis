@@ -1,0 +1,347 @@
+/* =========================
+   General Settings
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f3f6fa;
+  color: #263445;
+  line-height: 1.6;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* =========================
+   Main Page Containers
+========================= */
+
+.patient-page,
+.reception-page {
+  min-height: 100vh;
+  padding-bottom: 40px;
+}
+
+/* =========================
+   Header
+========================= */
+
+header {
+  background: linear-gradient(135deg, #17365d, #246b91);
+  color: white;
+  text-align: center;
+  padding: 35px 20px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+}
+
+header h1 {
+  font-size: 32px;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+header p {
+  font-size: 15px;
+  color: #e1edf5;
+}
+
+/* =========================
+   Main Content
+========================= */
+
+main {
+  width: 90%;
+  max-width: 1000px;
+  margin: 35px auto;
+}
+
+main > h2 {
+  color: #17365d;
+  font-size: 27px;
+  margin-bottom: 25px;
+}
+
+/* =========================
+   Sections
+========================= */
+
+section {
+  background-color: white;
+  padding: 25px;
+  margin-bottom: 25px;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(31, 55, 80, 0.06);
+  border: 1px solid #e5ebf1;
+}
+
+section h3 {
+  color: #17365d;
+  font-size: 20px;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #e8eef4;
+}
+
+/* =========================
+   Forms and Inputs
+========================= */
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+label {
+  font-weight: 600;
+  font-size: 14px;
+  color: #34495e;
+}
+
+input {
+  width: 100%;
+  padding: 11px 13px;
+  border: 1px solid #cbd5e1;
+  border-radius: 7px;
+  background-color: #ffffff;
+  color: #263445;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus {
+  border-color: #2675a5;
+  box-shadow: 0 0 0 3px rgba(38, 117, 165, 0.12);
+}
+
+/* =========================
+   Buttons
+========================= */
+
+button {
+  width: fit-content;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 7px;
+  background-color: #216b94;
+  color: white;
+  font-weight: 600;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+button:hover {
+  background-color: #174e70;
+  transform: translateY(-1px);
+}
+
+button:focus-visible {
+  outline: 3px solid #8bc7e5;
+  outline-offset: 3px;
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Patient Booking Button */
+
+.patient-page section button {
+  background-color: #16845b;
+}
+
+.patient-page section button:hover {
+  background-color: #116b49;
+}
+
+/* =========================
+   Appointment Cards
+========================= */
+
+article {
+  background-color: #f8fafc;
+  border: 1px solid #e0e7ef;
+  border-left: 5px solid #16845b;
+  border-radius: 9px;
+  padding: 18px;
+  margin-bottom: 15px;
+  transition: box-shadow 0.2s;
+}
+
+article:hover {
+  box-shadow: 0 4px 12px rgba(31, 55, 80, 0.09);
+}
+
+article h4 {
+  color: #17365d;
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+
+article p {
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #526274;
+}
+
+article button {
+  margin-top: 10px;
+  margin-right: 8px;
+}
+
+/* =========================
+   Reception Page
+========================= */
+
+.reception-page article {
+  border-left-color: #216b94;
+}
+
+.reception-page article form {
+  margin-top: 10px;
+}
+
+.reception-page article form button {
+  margin-right: 8px;
+}
+
+.reception-page article form button[type="button"] {
+  background-color: #64748b;
+}
+
+.reception-page article form button[type="button"]:hover {
+  background-color: #475569;
+}
+
+/* Delete and Cancel Buttons */
+
+.reception-page article button:last-child {
+  background-color: #c74646;
+}
+
+.reception-page article button:last-child:hover {
+  background-color: #a83232;
+}
+
+/* =========================
+   Messages
+========================= */
+
+main > p[role="status"] {
+  background-color: #e8f4ec;
+  color: #17633d;
+  border: 1px solid #b8dfc5;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  border-radius: 7px;
+  font-size: 14px;
+}
+
+/* =========================
+   Empty States
+========================= */
+
+section > p {
+  color: #718096;
+  font-size: 14px;
+}
+
+/* =========================
+   Responsive Design
+========================= */
+
+@media (max-width: 600px) {
+  header {
+    padding: 25px 15px;
+  }
+
+  header h1 {
+    font-size: 26px;
+  }
+
+  main {
+    width: 94%;
+    margin: 22px auto;
+  }
+
+  main > h2 {
+    font-size: 22px;
+  }
+
+  section {
+    padding: 17px;
+  }
+
+  section h3 {
+    font-size: 18px;
+  }
+
+  article {
+    padding: 14px;
+  }
+
+  article button {
+    width: 100%;
+    margin: 8px 0 0;
+  }
+
+  form button {
+    width: 100%;
+  }
+}
+
+/* Date search and alternative appointment selection */
+
+.patient-page input[type="date"],
+.patient-page select {
+  width: 100%;
+  max-width: 420px;
+  padding: 11px 13px;
+  margin: 8px 0 15px;
+  border: 1px solid #cbd5e1;
+  border-radius: 7px;
+  background: #fff;
+  color: #263445;
+}
+
+.patient-page select:focus {
+  outline: none;
+  border-color: #2675a5;
+  box-shadow: 0 0 0 3px rgba(38, 117, 165, 0.12);
+}
+
+.patient-page article form {
+  margin-top: 15px;
+}
+
+.patient-page article form button[type="button"] {
+  background-color: #64748b;
+}
+
+.patient-page article form button[type="button"]:hover {
+  background-color: #475569;
+}
+
+.booking-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
