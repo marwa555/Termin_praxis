@@ -1,7 +1,8 @@
 import { handleDeleteAppointment } from "../utils/handleDeleteAppointment";
 import { useState } from "react";
 import { handleEditAppointment } from "../utils/handleEditAppointment";
-function BookedAppointments({appointments,setAppointments,onEditAppointment}){
+import { handleStorniernAppointments } from "../utils/handleStorniernAppointments";
+function BookedAppointments({appointments,setAppointments,onEditAppointment,onEditAppointmentByMitarbeiter}){
     const [editingAppointmentId, setEditingAppointmentId]=useState(null);
     const [patientName,setPatientName]=useState("");
     const [patientPhone,setPatientPhone]=useState("");
@@ -65,8 +66,8 @@ function BookedAppointments({appointments,setAppointments,onEditAppointment}){
                 <p>Uhrzeit: {appointment.time}</p>
                 <p>Name: {appointment.patientName}</p>
                 <p>Telefonnummer: {appointment.patientPhone}</p>
-
-                <button
+                {onEditAppointmentByMitarbeiter && (
+                      <button
                     type="button"
                     onClick={() =>
                         handleDeleteAppointment(
@@ -79,6 +80,10 @@ function BookedAppointments({appointments,setAppointments,onEditAppointment}){
                     Termin löschen
                 </button>
 
+                )}
+
+              
+
                 {onEditAppointment && (
                     <button
                         type="button"
@@ -86,6 +91,18 @@ function BookedAppointments({appointments,setAppointments,onEditAppointment}){
                     >
                         Termin bearbeiten
                     </button>
+                    
+                )}
+                 {onEditAppointment && (
+                    <button
+                        type="button"
+                        onClick={() => handleStorniernAppointments(appointment.id,
+                            appointments,
+                            setAppointments)}
+                    >
+                        Termin Stornieren
+                    </button>
+                    
                 )}
             </div>
         )}

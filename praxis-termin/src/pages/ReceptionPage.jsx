@@ -5,6 +5,7 @@ import BookedAppointments from "../components/BookedAppointments";
 function ReceptionPage({appointments,setAppointments}){
     const [date, setDate] = useState("");
     const [time,setTime]= useState("");
+    
   
     return (
         <div className="reception-page">
@@ -37,6 +38,7 @@ function ReceptionPage({appointments,setAppointments}){
                  setAppointments={setAppointments} onEditAppointment={true}/>
                 <BookedAppointments appointments={appointments}
                 setAppointments={setAppointments}
+                onEditAppointmentByMitarbeiter={true}
                 />
             </main>
 
