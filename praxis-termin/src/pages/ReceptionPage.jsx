@@ -5,6 +5,8 @@ import BookedAppointments from "../components/BookedAppointments";
 function ReceptionPage({appointments,setAppointments}){
     const [date, setDate] = useState("");
     const [time,setTime]= useState("");
+    const [errorMessage,setErrorMessage]=useState("");
+    
     
   
     return (
@@ -18,7 +20,7 @@ function ReceptionPage({appointments,setAppointments}){
                 <section>
                     <h3>Neue Termin erstellen</h3>
                     <form onSubmit={(event)=>handleAddAppointment(event,date,time,appointments,setAppointments,
-                        setDate,setTime
+                        setDate,setTime,setErrorMessage
                     )}>
                         <div> 
                             <label htmlFor="date">Datum</label>
@@ -32,6 +34,9 @@ function ReceptionPage({appointments,setAppointments}){
                             onChange={(event)=>setTime(event.target.value)} required />
                         </div>
                         <button type="submit">Termin hinzufügen</button>
+                        {errorMessage && (
+                            <p className="error-message">{errorMessage}</p>
+                        )}
                     </form>
                 </section>
                 <AvailableAppointments appointments={appointments}
