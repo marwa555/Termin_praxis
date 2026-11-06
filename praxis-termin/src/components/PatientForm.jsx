@@ -4,7 +4,7 @@ function PatientForm({patientName,setPatientName,patientPhone,setPatientPhone}){
   return(
     <section className="patient-form-section">
         <h2>Mein Daten</h2>
-        <p>Bitte Geben Sie Thre persönlichen Daten ein , um einen Termin zu buchen</p>
+        <p>Bitte Geben Sie Ihre persönlichen Daten ein , um einen Termin zu buchen</p>
         <form>
             <div className="form-group">
                 <label htmlFor="patientName">Vor-und Nachname </label>

@@ -345,3 +345,11 @@ section > p {
   flex-wrap: wrap;
   margin-top: 12px;
 }
+.error-message {
+    color: #d32f2f;
+    background-color: #fff0f0;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-top: 10px;
+}

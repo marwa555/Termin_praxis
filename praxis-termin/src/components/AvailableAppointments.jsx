@@ -1,7 +1,7 @@
 import { handleEditAppointmentByMitarbeiter } from "../utils/handleEditAppointmentByMitarbeiter";
 import { handleDeleteAppointment } from "../utils/handleDeleteAppointment";
 import { useState } from "react";
-function AvailableAppointments({appointments,setAppointments,onBookAppointment,onEditAppointment}){
+function AvailableAppointments({appointments,setAppointments,onBookAppointment,onEditAppointment,errorAppointmentId}){
     const [editingAppointmentId,setEditingAppointment]=useState(null);
     const [date,setDate]=useState("");
     const [time,setTime]=useState("");
@@ -73,6 +73,11 @@ function AvailableAppointments({appointments,setAppointments,onBookAppointment,o
                         Termin buchen
                     </button>
                 )}
+                {
+                    errorAppointmentId === appointment.id &&(
+                        <p className="error-message">Bitte geben Sie Ihren Name und Telefonnummer ein.</p>
+                    )
+                }
 
                 {onEditAppointment && (
                     <button

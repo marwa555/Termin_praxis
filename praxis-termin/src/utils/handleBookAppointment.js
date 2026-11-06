@@ -3,16 +3,18 @@ export function handleBookAppointment(
     appointments,
     setAppointments,
     patientName,
-    patientPhone
+    patientPhone,
+    setErrorAppointmentId
 ) {
     console.log("Name:", patientName);
     console.log("Phone:", patientPhone);
    
 
     if (!patientName.trim() || !patientPhone.trim()) {
-        alert("Bitte geben Sie Ihren Namen und Ihre Telefonnummer ein.");
+        setErrorAppointmentId(appointmentId);
         return;
     }
+    setErrorAppointmentId(null);
     
     const updatedAppointments = appointments.map((appointment) => {
         if (appointment.id === appointmentId) {

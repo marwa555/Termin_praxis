@@ -10,6 +10,7 @@ function PatientPage({appointments,setAppointments}){
     const[patientName,setPatientName]=useState("");
     const[patientPhone,setPatientPhone]=useState("");
     const [searchDate,setSearchDate]=useState("");
+    const [errorAppointmentId,setErrorAppointmentId]=useState(null);
     const filteredAppointments=filterAppointments(appointments,searchDate);
 
     return (
@@ -28,6 +29,7 @@ function PatientPage({appointments,setAppointments}){
              <SearchAppointment searchDate ={searchDate} setSearchDate={setSearchDate}/>
             <AvailableAppointments
              appointments={filteredAppointments}
+             errorAppointmentId={errorAppointmentId}
              onBookAppointment={(appointmentId) => {
        
                handleBookAppointment(
@@ -35,7 +37,8 @@ function PatientPage({appointments,setAppointments}){
                appointments,
                setAppointments,
                patientName,
-               patientPhone
+               patientPhone,
+               setErrorAppointmentId
                                 );
                                         }}
                />
